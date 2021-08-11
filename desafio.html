@@ -1,0 +1,94 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+function desenhaTexto(x, y, texto) {
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+    pincel.font = "15px Arial";
+    pincel.fillStyle = "green";
+    pincel.fillText(texto, x, y);
+
+}
+
+function desenhaEstrela(x, y) {
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+    pincel.beginPath();
+    pincel.fillStyle = "white";
+    pincel.moveTo(x, y-5);
+    pincel.lineTo(x-1, y-1);
+    pincel.lineTo(x-5, y-1);
+    pincel.lineTo(x-2, y+1);
+    pincel.lineTo(x-3, y+5);
+    pincel.lineTo(x, y+3);
+    pincel.lineTo(x+3, y+5);
+    pincel.lineTo(x+2, y+1);
+    pincel.lineTo(x+5, y-1);
+    pincel.lineTo(x+1, y-1);
+    pincel.fill();
+}
+
+function desenhaBandeiraBrasil() {
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+    pincel.fillStyle="green";
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle = "yellow";
+    pincel.beginPath();
+    pincel.moveTo(300,30);
+    pincel.lineTo(560,195);
+    pincel.lineTo(300,370);
+    pincel.lineTo(40, 195);
+    pincel.lineTo(300,30);
+    pincel.fill();
+    pincel.closePath();
+
+    pincel.fillStyle= "darkblue";
+    pincel.beginPath();
+
+    pincel.arc(300, 200, 100, 0, 2* Math.PI);
+    pincel.fill();
+
+    pincel.fillStyle= "white";
+    pincel.fillRect(200, 190, 200, 15);
+
+    desenhaEstrela(330, 170);
+    desenhaEstrela(330, 215);
+    desenhaEstrela(325, 243);
+    desenhaEstrela(310, 230);
+    desenhaEstrela(313, 265);
+    desenhaEstrela(300, 245);
+    desenhaEstrela(310, 249);
+    desenhaEstrela(275, 221);
+    desenhaEstrela(271, 244);
+    desenhaEstrela(279, 264);
+    desenhaEstrela(267, 260);
+    desenhaEstrela(255, 230);
+    desenhaEstrela(245, 240);
+    desenhaEstrela(240, 253);
+    desenhaEstrela(215, 217);
+    desenhaEstrela(305, 287);
+    desenhaEstrela(387, 222);
+    desenhaEstrela(370, 227);
+    desenhaEstrela(375, 240);
+    desenhaEstrela(365, 250);
+    desenhaEstrela(353, 260);
+    desenhaEstrela(345, 255);
+    desenhaEstrela(345, 265);
+    desenhaEstrela(345, 275);
+    desenhaEstrela(335, 260);
+    desenhaEstrela(327, 271);
+    desenhaEstrela(320, 257);
+
+}
+
+
+desenhaBandeiraBrasil();
+desenhaTexto(215, 203, "ORDEM E PROGRESSO");
+
+</script>
